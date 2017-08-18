@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_goods extends Parent_model {
+class M_pelanggan extends Parent_model {
 
 	public function get_new($arrdata){
 		$setting = new StdClass();
