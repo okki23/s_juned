@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class produk extends Parent_controller {
+class Produk extends Parent_controller {
 
   var $parsing_form_input = array('id','kode_produk','nama_produk','quantity','jenis','harga');
   var $tablename = 'm_produk';

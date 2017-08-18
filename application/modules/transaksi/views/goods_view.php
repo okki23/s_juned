@@ -11,27 +11,22 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <h4 class="panel-title">REQUEST GOODS MANAGEMENT</h4>
+                            <h4 class="panel-title">GOODS MANAGEMENT</h4>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
 
-															<a href="<?php echo base_url('req_goods/store');?>" class="btn btn-large btn-danger"> <i class="fa fa-plus-circle"></i> ADD </a>
+															<a href="<?php echo base_url('goods/store');?>" class="btn btn-large btn-danger"> <i class="fa fa-plus-circle"></i> ADD </a>
 															<br>
 															&nbsp;
 																 <table id="data-table" class="table table-striped table-bordered">
                                     <thead>
-                                        <tr>
+																			  <tr>
 																						<th>No</th>
-																						<th>No Po</th>
-                                            <th>Supplier</th>
-                                            <th>Barang</th>
+                                            <th>Nama Barang</th>
                                             <th>Qty</th>
-																						<th>Satuan</th>
-                                            <th>Harga</th>
-																						<th>Status Paid</th>
-																						<th>Date Create</th>
-
+                                            <th>Satuan</th>
+                                            <th>Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -42,18 +37,12 @@
 
 																			<tr>
 																					<td><?php echo $no; ?></td>
-																					<td><?php echo $row->no_po; ?></td>
-																					<td><?php echo $row->nama_supplier; ?></td>
 																					<td><?php echo $row->nama_barang; ?></td>
 																					<td><?php echo $row->qty; ?></td>
 																					<td><?php echo $row->satuan; ?></td>
-																					<td><?php echo $row->harga; ?></td>
-																					<td><?php echo strtoupper($row->status_paid); ?></td>
-																					<td><?php echo $row->date_insert; ?></td>
-
 																					<td>
-																						<a class="btn btn-warning" href="<?php echo base_url('req_goods/store/'.$row->id); ?>">  <i class="fa fa-pencil"></i> Edit </a>   &nbsp;
-																						<a class="btn btn-danger" onclick="javascript:return confirm('Anda yakin ingin menghapus data ini?')" href="<?php echo base_url('req_goods/delete/'.$row->id); ?>"> <i class="fa fa-trash"></i> Delete </a>
+																						<a class="btn btn-warning" href="<?php echo base_url('goods/store/'.$row->id); ?>">  <i class="fa fa-pencil"></i> Edit </a>   &nbsp;
+																						<a class="btn btn-danger" onclick="javascript:return confirm('Anda yakin ingin menghapus data ini?')" href="<?php echo base_url('goods/delete/'.$row->id); ?>"> <i class="fa fa-trash"></i> Delete </a>
 																					</td>
 
 																			</tr>

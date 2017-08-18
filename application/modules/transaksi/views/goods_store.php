@@ -99,104 +99,36 @@
                                  <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                  <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                              </div>
-                             <h4 class="panel-title">REQUEST GOODS MANAGEMENT FORM</h4>
+                             <h4 class="panel-title">GOODS MANAGEMENT FORM</h4>
                          </div>
 
                          <div class="panel-body">
-                             <form class="form-horizontal" action="<?php echo base_url('req_goods/save'); ?>" method="POST">
+                             <form class="form-horizontal" action="<?php echo base_url('goods/save'); ?>" method="POST">
 															 <input type="hidden" name="id" value="<?php echo $parseform->id; ?>">
-															 <input type="hidden" name="user_insert" value="<?php echo $this->session->userdata('username'); ?>">
-															 <input type="hidden" name="date_insert" value="<?php echo date('Y-m-d H:i:s'); ?>">
 															 <div class="form-group">
-																  <label class="col-md-3 control-label">No Po
-																	</label>
+															 		<label class="col-md-3 control-label">Nama Barang</label>
 															 		<div class="col-md-9">
-																		<?php
-																		if($this->uri->segment(3) == '' || $this->uri->segment(3) == NULL ){
-																			/*$loc = $nopo;*/
-																			$loc = "PO".$po_no_val;
-																		}else{
-																			$loc = $parseform->no_po;
-																		}
-																		?>
-															 				<input type="text" name="no_po" readonly="readonly" value="<?php echo $loc; ?>" class="form-control" />
+															 				<input type="text" name="nama_barang" value="<?php echo $parseform->nama_barang; ?>" class="form-control"   />
+															 		</div>
+															 </div>
+															 <div class="form-group">
+															 		<label class="col-md-3 control-label">Qty</label>
+															 		<div class="col-md-9">
+															 				<input type="text" name="qty" class="form-control"  value="<?php echo $parseform->qty; ?>" />
+															 		</div>
+															 </div>
+															 <div class="form-group">
+															 		<label class="col-md-3 control-label">Satuan</label>
+															 		<div class="col-md-9">
+															 				<input type="text" name="satuan" class="form-control"  value="<?php echo $parseform->satuan; ?>" />
 															 		</div>
 															 </div>
 
-															 <div class="form-group">
-															 		<label class="col-md-3 control-label">Nama Supplier</label>
-															 		<div class="col-md-9">
-																		<select name="id_supplier"  readonly="readonly" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
-																						<option value = "">--Pilih--</option>
-																						<?php foreach ($opt_supplier as $row){
-
-																								if($row->id == $parseform->id_supplier){
-																									echo '<option value='.$row->id.' selected=selected> '.$row->nama_supplier.' </option>';
-																								}else{
-																									echo '<option value='.$row->id.'> '.$row->nama_supplier.' </option>';
-																								}
-
-																						}
-																						?>
-																	  </select>
-															 		</div>
-															 </div>
-
-															 <div class="form-group">
-																 <label class="col-md-3 control-label">Nama Barang</label>
-																 <div class="col-md-9">
-																	 <select name="id_barang"  readonly="readonly" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
-																					 <option value = "">--Pilih--</option>
-																					 <?php foreach ($opt_goods as $row){
-
-																							 if($row->id == $parseform->id_barang){
-																								 echo '<option value='.$row->id.' selected=selected> '.$row->nama_barang.' </option>';
-																							 }else{
-																								 echo '<option value='.$row->id.'> '.$row->nama_barang.' </option>';
-																							 }
-
-																					 }
-																					 ?>
-																	 </select>
-																 </div>
-															</div>
-															<div class="form-group">
-																 <label class="col-md-3 control-label">Qty
-																 </label>
-																 <div class="col-md-9">
-																		<input type="text" name="qty" value="<?php echo $parseform->qty; ?>" class="form-control" />
-																 </div>
-															</div>
-															<div class="form-group">
-																 <label class="col-md-3 control-label">Satuan
-																 </label>
-																 <div class="col-md-9">
-																		<input type="text" name="satuan" value="<?php echo $parseform->satuan; ?>" class="form-control" />
-																 </div>
-															</div>
-															<div class="form-group">
-																 <label class="col-md-3 control-label">Harga
-																 </label>
-																 <div class="col-md-9">
-																		<input type="text" name="harga" value="<?php echo $parseform->harga; ?>" class="form-control" />
-																 </div>
-															</div>
-															<div class="form-group">
-																 <label class="col-md-3 control-label">Status Paid
-																 </label>
-																 <div class="col-md-9">
-																	 <select name="status_paid" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
-																					<option value = "">--Pilih--</option>
-																					<option value = "paid" <?php if($parseform->status_paid == 'paid'){ echo "selected=selected"; } ?> >Paid</option>
-																					<option value = "unpaid" <?php if($parseform->status_paid == 'unpaid'){ echo "selected=selected"; } ?> >UnPaid</option>
-																	</select>
-																 </div>
-															</div>
 
 
 															 <div  align="center">
 															 		<button type="submit" name="save" class="btn btn-large btn-primary" > <i class="fa fa-archive"></i> Save </button>
-																	<a class="btn btn-danger" href="<?php echo base_url('req_goods'); ?>"> <i class="fa fa-reply-all"></i> Back </a>
+																	<a class="btn btn-danger" href="<?php echo base_url('goods'); ?>"> <i class="fa fa-reply-all"></i> Back </a>
 															 </div>
 																 <!-- <div class="form-group">
                                      <label class="col-md-3 control-label">Default Input</label>
@@ -463,23 +395,3 @@
                  <!-- end col-6 -->
             </div>
             <!-- end row -->
-
-						<script>
-						$(document).ready(function(e){
-							var base_url = "<?php echo base_url();?>";
-							alert(base_url);
-							var input = $("#no_po").val();
-
-								$.get(base_url+'rec_goods/get_content_form', function(data){
-											input.typeahead({
-													source: data,
-													minLength: 1,
-											});
-								}, 'json');
-
-								input.change(function(){
-									var current = input.typeahead("getActive");
-									$('#id_barang').val(current.id_barang);
-								});
-						});
-						</script>
